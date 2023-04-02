@@ -1,6 +1,5 @@
 package com.smt.georgeclam.springbootmastertutorial.customer;
 
-// import com.smt.georgeclam.springbootmastertutorial;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,11 +24,13 @@ public class CustomerController {
 
     @Autowired
     public CustomerController(CustomerService customerService) {
+
         this.customerService = customerService;
     }
 
     @GetMapping("/")
     List<Customer> getCustomer() {
+
         return customerService.getCustomer();
     }
 
