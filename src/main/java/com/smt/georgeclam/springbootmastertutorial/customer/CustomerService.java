@@ -1,7 +1,7 @@
 package com.smt.georgeclam.springbootmastertutorial.customer;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import java.util.List;
 
 /****
@@ -15,7 +15,7 @@ import java.util.List;
  @since 4/1/23
  @updates: ****/
 
-@Component
+@Service
 public class CustomerService {
 
     private final CustomerRepo customerRepo;

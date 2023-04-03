@@ -1,7 +1,5 @@
 package com.smt.georgeclam.springbootmastertutorial.customer;
 
-import org.springframework.stereotype.Component;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,9 +14,7 @@ import java.util.List;
  @since 4/2/23
  @updates: ****/
 
-@Component(value = "fake")
 public class CustomerFakeRepository implements CustomerRepo {
-
     @Override
     public List<Customer> getCustomers() {
         return Arrays.asList(

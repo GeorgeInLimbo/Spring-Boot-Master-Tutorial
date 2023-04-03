@@ -1,7 +1,6 @@
 package com.smt.georgeclam.springbootmastertutorial.customer;
 
-import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import java.util.Collections;
 import java.util.List;
 
@@ -16,8 +15,7 @@ import java.util.List;
  @since 4/1/23
  @updates: ****/
 
-@Component
-@Primary
+@Repository
 public class CustomerRepository implements CustomerRepo {
     @Override
     public List<Customer> getCustomers() {
