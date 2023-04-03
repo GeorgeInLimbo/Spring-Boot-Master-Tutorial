@@ -23,13 +23,11 @@ public class CustomerController {
 
     @Autowired
     public CustomerController(CustomerService customerService) {
-
         this.customerService = customerService;
     }
 
     @GetMapping("/")
     List<Customer> getCustomer() {
-
         return customerService.getCustomer();
     }
 }

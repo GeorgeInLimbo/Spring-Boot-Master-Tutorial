@@ -15,12 +15,12 @@ import java.util.List;
  @since 4/1/23
  @updates: ****/
 
-@Repository
 public class CustomerRepository implements CustomerRepo {
     @Override
     public List<Customer> getCustomers() {
+        // TODO connect to a real DB
         return Collections.singletonList(
-                new Customer(1L, "TODO implement real db")
+                new Customer(1L, "TODO implement real db", "todopassword")
         );
     }
 }
