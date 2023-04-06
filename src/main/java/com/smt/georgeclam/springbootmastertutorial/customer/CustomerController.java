@@ -4,17 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
-/****
- <b>Title:</b> CustomerController<br>
- <b>Project:</b> spring-boot-master-tutorial<br>
- <b>Description:</b> <br>
- <b>Copyright:</b> Copyright (c) 2023<br>
- <b>Company:</b> Silicon Mountain Technologies<br>
- @author George Clam
- @version 1.0
- @since 4/1/23
- @updates: ****/
-
 @RequestMapping(path = "/api/v1/customer")
 @RestController
 @Deprecated

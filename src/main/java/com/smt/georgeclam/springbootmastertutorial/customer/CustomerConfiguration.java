@@ -5,21 +5,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-/****
- <b>Title:</b> CustomerConfiguration<br>
- <b>Project:</b> spring-boot-master-tutorial<br>
- <b>Description:</b> <br>
- <b>Copyright:</b> Copyright (c) 2023<br>
- <b>Company:</b> Silicon Mountain Technologies<br>
- @author George Clam
- @version 1.0
- @since 4/2/23
- @updates: ****/
-
 @Configuration
 public class CustomerConfiguration {
 
-    @Value("${app.useFakeCustomerRepo:false}")
+    @Value("${app.useFakeCustomerRepo:true}")
     private Boolean useFakeCustomerRepo;
 
     @Bean  // If you remove this annotation, the printed line will not appear in the console

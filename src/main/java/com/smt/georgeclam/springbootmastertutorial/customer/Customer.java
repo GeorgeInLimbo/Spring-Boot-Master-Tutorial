@@ -5,17 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
-/****
- <b>Title:</b> Customer<br>
- <b>Project:</b> spring-boot-master-tutorial<br>
- <b>Description:</b> <br>
- <b>Copyright:</b> Copyright (c) 2023<br>
- <b>Company:</b> Silicon Mountain Technologies<br>
- @author George Clam
- @version 1.0
- @since 4/1/23
- @updates: ****/
-
 public class Customer {
     private final Long id;
 
@@ -30,10 +19,7 @@ public class Customer {
     @Email // You can include a regex parameter to customize your validation
     private final String email;
 
-    public Customer(Long id,
-                    String name,
-                    String password,
-                    String email) {
+    public Customer(Long id, String name, String password, String email) {
         this.id = id;
         this.name = name;
         this.password = password;

@@ -1,19 +1,9 @@
 package com.smt.georgeclam.springbootmastertutorial.customer;
 
+import com.smt.georgeclam.springbootmastertutorial.exception.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
-
-/****
- <b>Title:</b> CustomerService<br>
- <b>Project:</b> spring-boot-master-tutorial<br>
- <b>Description:</b> <br>
- <b>Copyright:</b> Copyright (c) 2023<br>
- <b>Company:</b> Silicon Mountain Technologies<br>
- @author George Clam
- @version 1.0
- @since 4/1/23
- @updates: ****/
 
 @Service
 public class CustomerService {
@@ -33,6 +23,6 @@ public class CustomerService {
                 .stream()
                 .filter(customer -> customer.getId().equals(id))
                 .findFirst()
-                .orElseThrow(() -> new IllegalStateException("Customer not found"));
+                .orElseThrow(() -> new NotFoundException("Customer with id "  + id + " not found"));
     }
 }
