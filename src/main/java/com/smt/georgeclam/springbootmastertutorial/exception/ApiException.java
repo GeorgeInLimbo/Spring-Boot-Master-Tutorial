@@ -6,7 +6,7 @@ import java.time.ZonedDateTime;
 
 public class ApiException {
     private final String message;
-    private final Throwable throwable;
+    private final Throwable throwable; // This creates the long exception object on a bad request to the api
     private final HttpStatus httpStatus;
     private final ZonedDateTime zonedDateTime;
 
