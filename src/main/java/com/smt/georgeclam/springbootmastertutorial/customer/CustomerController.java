@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
-@RequestMapping(path = "/api/v1/customer")
+@RequestMapping(path = "/api/v1/customer") // Set endpoint
 @RestController
 @Deprecated
 public class CustomerController {

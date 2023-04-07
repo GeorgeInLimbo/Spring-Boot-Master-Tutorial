@@ -8,21 +8,19 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class CustomerConfiguration {
 
-    @Value("${app.useFakeCustomerRepo:true}")
+    @Value("${app.useFakeCustomerRepo:false}") // Revisit this param
     private Boolean useFakeCustomerRepo;
 
     @Bean  // If you remove this annotation, the printed line will not appear in the console
     CommandLineRunner commandLineRunner () {
         return args -> {
-            System.out.println("Command line runner!");
+            System.out.println("Command line runner!");  // What do we use a command line runner for?
         };
     }
 
     @Bean
     CustomerRepo customerRepo() {
-        System.out.println("useFakeCustomerRepo = " + useFakeCustomerRepo);
-        return useFakeCustomerRepo
-                ? new CustomerFakeRepository()
-                : new CustomerRepository();
+        System.out.println("useFakeCustomerRepo = " + useFakeCustomerRepo);  // Callback to the configuration
+        return new CustomerFakeRepository();
     }
 }
