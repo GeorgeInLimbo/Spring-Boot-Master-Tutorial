@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.0.5'
 	id 'io.spring.dependency-management' version '1.1.0'
+	id 'io.freefair.lombok' version '6.2.0'
 }
 
 group = 'com.smt.georgeclam'
@@ -24,6 +25,8 @@ dependencies {
 	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'io.micrometer:micrometer-registry-prometheus'
+	implementation 'org.springframework.boot:spring-boot-configuration-processor'
+	implementation 'org.projectlombok:lombok:1.18.20'
 	runtimeOnly 'com.h2database:h2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
@@ -36,4 +39,20 @@ dependencyManagement {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+dependencies {
+	// ...
+	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+	// ...
+}
+
+compileJava {
+	options.annotationProcessorPath = configurations.annotationProcessor
 }

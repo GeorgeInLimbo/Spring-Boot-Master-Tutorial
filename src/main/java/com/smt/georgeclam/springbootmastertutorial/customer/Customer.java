@@ -7,9 +7,17 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @Table
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode
 public class Customer {
 
     @Id
@@ -25,16 +33,6 @@ public class Customer {
     @NotBlank(message = "Email must be complete and valid.")
     @Email // You can include a regex parameter to customize your validation
     private String email;
-
-    public Customer(Long id, String name, String password, String email) {
-        this.id = id;
-        this.name = name;
-        this.password = password;
-        this.email = email;
-    }
-
-    public Customer() {
-    }
 
     @JsonProperty("customerId")
     public Long getId() {
@@ -52,22 +50,5 @@ public class Customer {
 
     public String getEmail() {
         return email;
-    }
-
-    @Override
-    public String toString() {
-        return "Customer{"
-                + "id="
-                + id
-                + ", name='"
-                + name
-                + '\''
-                + ", password='"
-                + password
-                + '\''
-                + ", email='"
-                + email
-                + '\''
-                + '}';
     }
 }
